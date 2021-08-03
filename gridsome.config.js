@@ -6,5 +6,18 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'BlogPost', //garpgQl query的对象名
+        path: './content/blog/**/*.md',
+      }
+    }
+  ],
+  transformers: {
+    remark: {
+      // global remark options
+    }
+  }
 }
